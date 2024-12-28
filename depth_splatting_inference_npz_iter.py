@@ -17,20 +17,20 @@ python inpainting_inference_iter.py \
 
 #####
 
-python split_video.py --input_path test_videos0 --frames_per_segment 64 --output_path test_videos0_64_sp --skip_short_segments
+python split_video.py --input_path test_videos1 --frames_per_segment 64 --output_path test_videos1_64_sp --skip_short_segments
 
 python depth_splatting_inference_npz_iter.py \
    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
    --unet_path ./weights/DepthCrafter --process_length 64 \
-   --input_path test_videos0_64_sp \
-   --output_path test_videos0_splatting_64_sp
-   
-python npz_to_video.py --input_folder test_videos0_splatting_64_sp --output_folder test_videos0_splatting_64_sp_video
+   --input_path test_videos1_64_sp \
+   --output_path test_videos1_splatting_64_sp
+
+python npz_to_video.py --input_folder test_videos1_splatting_64_sp --output_folder test_videos1_splatting_64_sp_video
 
 python inpainting_inference_iter.py \
     --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
     --unet_path ./weights/StereoCrafter \
-    --input_video_path test_videos0_splatting_64_sp_video --output_video_path test_videos0_splatting_64_sp_video_3D
+    --input_video_path test_videos1_splatting_64_sp_video --output_video_path test_videos1_splatting_64_sp_video_3D
 '''
 
 import gc
