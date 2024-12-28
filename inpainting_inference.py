@@ -174,10 +174,12 @@ def main(
     pipeline.enable_attention_slicing()
     
     # 启用 xformers 内存高效注意力（如果可用）
+    '''
     try:
         pipeline.enable_xformers_memory_efficient_attention()
     except ImportError:
         print("xformers 未安装，跳过启用内存高效注意力")
+    '''
 
     print("to cuda end.")
 
