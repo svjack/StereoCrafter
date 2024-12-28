@@ -58,10 +58,12 @@ git clone https://github.com/svjack/StereoCrafter
 cd StereoCrafter
 ```
 
+# When run depth_splatting_inference_npz.py
+
 #### 3. Install the requirements
 ```bash
 pip install -r requirements.txt
-#pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 #pip uninstall xformers
 #pip install xformers
 #pip install moviepy==1.0.3
@@ -75,6 +77,11 @@ chmod a+x install.sh
 ./install.sh
 ```
 
+# When run inpainting_inference.py
+
+```bash
+pip install -r requirements.txt
+```
 
 ## 📦 Model Weights
 
