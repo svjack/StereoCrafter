@@ -17,7 +17,7 @@ python inpainting_inference_iter.py \
 
 #####
 
-python split_video.py --input_path test_videos0 --frames_per_segment 64 --output_path test_videos0_64_sp
+python split_video.py --input_path test_videos0 --frames_per_segment 64 --output_path test_videos0_64_sp --skip_short_segments
 
 python depth_splatting_inference_npz_iter.py \
    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
