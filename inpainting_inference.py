@@ -166,7 +166,19 @@ def main(
         unet=unet,
         torch_dtype=torch.float16,
     )
-    pipeline = pipeline.to("cuda")
+    #pipeline = pipeline.to("cuda")
+    pipeline.enable_sequential_cpu_offload()
+    # 启用模型 CPU 卸载
+    pipeline.enable_model_cpu_offload()
+    # 启用注意力切片
+    pipeline.enable_attention_slicing()
+    
+    # 启用 xformers 内存高效注意力（如果可用）
+    try:
+        pipeline.enable_xformers_memory_efficient_attention()
+    except ImportError:
+        print("xformers 未安装，跳过启用内存高效注意力")
+
     print("to cuda end.")
 
     os.makedirs(save_dir, exist_ok=True)
