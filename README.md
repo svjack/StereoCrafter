@@ -159,9 +159,13 @@ npz_to_video(npz_path, output_video_path, fps, key = "depth")
 ```
 
 camel_splatting_results_video_grid.mp4
+
+
 https://github.com/user-attachments/assets/160f2be6-a069-4abd-9c35-045c5565d17d
 
 camel_splatting_results.mp4
+
+
 https://github.com/user-attachments/assets/85a34c1e-b2f9-40e5-9cdd-ff844f1449b8
 
 
