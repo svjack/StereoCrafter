@@ -47,6 +47,7 @@ You can use Anaconda or Docker to build this basic environment.
 #### 2. Clone the repo
 ```bash
 sudo apt-get update && sudo apt-get install git-lfs ffmpeg cbm
+sudo apt-get upgrade ffmpeg
 
 conda create -n stereoCrafter python=3.10
 conda activate stereoCrafter
