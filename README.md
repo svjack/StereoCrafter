@@ -168,6 +168,46 @@ camel_splatting_results.mp4
 
 https://github.com/user-attachments/assets/85a34c1e-b2f9-40e5-9cdd-ff844f1449b8
 
+```bash
+cp ./outputs/camel_splatting_results_video_grid.mp4 camel_splatting_results_video_grid.mp4
+```
+
+```python
+from moviepy.editor import VideoFileClip
+
+def resize_video(input_video_path, output_video_path, scale_factor=0.5):
+    """
+    缩放视频的长宽
+    :param input_video_path: 输入视频文件路径
+    :param output_video_path: 输出视频文件路径
+    :param scale_factor: 缩放因子，例如 0.5 表示长宽变为原来的一半，2 表示长宽变为原来的两倍
+    """
+    # 加载视频
+    clip = VideoFileClip(input_video_path)
+
+    # 计算新的分辨率
+    new_width = int(clip.size[0] * scale_factor)
+    new_height = int(clip.size[1] * scale_factor)
+
+    # 缩放视频
+    resized_clip = clip.resize((new_width, new_height))
+
+    # 保存缩放后的视频
+    resized_clip.write_videofile(output_video_path, codec="libx264")
+
+# 示例调用
+input_video_path = "camel_splatting_results_video_grid.mp4"  # 替换为输入视频路径
+output_video_path = "camel_splatting_results_video_grid_half.mp4"  # 替换为输出视频路径
+scale_factor = 0.5  # 缩放因子，0.5 表示长宽变为原来的一半，2 表示长宽变为原来的两倍
+resize_video(input_video_path, output_video_path, scale_factor)
+```
+
+camel_splatting_results_video_grid_half.mp4
+
+
+
+https://github.com/user-attachments/assets/1430695c-a48e-47e7-9057-7022bd6a79d7
+
 
 
   
@@ -176,19 +216,26 @@ https://github.com/user-attachments/assets/85a34c1e-b2f9-40e5-9cdd-ff844f1449b8
 python inpainting_inference.py \
     --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
     --unet_path ./weights/StereoCrafter \
-    --input_video_path ./outputs/camel_splatting_results.mp4 \
+    --input_video_path camel_splatting_results_video_grid_half.mp4 \
     --save_dir ./outputs
 ```
-camel_inpainting_results_sbs.mp4
-
-https://github.com/user-attachments/assets/96a747f6-90a2-47b3-b91e-870efd000ddb
-
-camel_inpainting_results_anaglyph.mp4
+camel_video_grid_half_inpainting_results_sbs.mp4
 
 
 
+https://github.com/user-attachments/assets/6c0308ba-270b-4feb-aa9c-9ba45f9ce542
 
-https://github.com/user-attachments/assets/f6a811a3-6c1d-4d73-85c8-85a77edc3136
+
+
+camel_video_grid_half_inpainting_results_anaglyph.mp4
+
+
+
+
+
+
+https://github.com/user-attachments/assets/4a52bb9f-0c14-4a1d-8aee-8975f62fd447
+
 
 
 
