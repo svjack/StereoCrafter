@@ -83,7 +83,8 @@ cd ./weights
 git lfs install
 
 huggingface-cli login
-
+huggingface-cli download stabilityai/stable-video-diffusion-img2vid-xt-1-1 --local-dir stable-video-diffusion-img2vid-xt-1-1
+#### OR
 git clone https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1
 ```
 
