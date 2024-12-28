@@ -9,6 +9,11 @@ python depth_splatting_inference_npz_iter.py \
    --output_path test_videos0_splatting_64
 
 python npz_to_video.py --input_folder test_videos0_splatting_64 --output_folder test_videos0_splatting_64_video
+
+python inpainting_inference_iter.py \
+    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
+    --unet_path ./weights/StereoCrafter \
+    --input_video_path test_videos0_splatting_64_video --output_video_path test_videos0_splatting_64_video_3D
 '''
 
 import gc
