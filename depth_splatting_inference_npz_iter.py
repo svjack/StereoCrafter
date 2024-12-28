@@ -1,3 +1,16 @@
+'''
+huggingface-cli download svjack/Genshin-Impact-Novel-Video Genshin-Impact-Cutness-video1.zip --repo-type dataset --local-dir .
+
+##### choose this
+python depth_splatting_inference_npz_iter.py \
+   --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
+   --unet_path ./weights/DepthCrafter --process_length 64 \
+   --input_path test_videos0 \
+   --output_path test_videos0_splatting_64
+
+python npz_to_video.py --input_folder test_videos0_splatting_64 --output_folder test_videos0_splatting_64_video
+'''
+
 import gc
 import os
 import numpy as np
