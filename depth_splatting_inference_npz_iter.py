@@ -21,10 +21,10 @@ python split_video.py --input_path test_videos0 --frames_per_segment 64 --output
 
 python depth_splatting_inference_npz_iter.py \
    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
-   --unet_path ./weights/DepthCrafter --process_length -1 \
+   --unet_path ./weights/DepthCrafter --process_length 64 \
    --input_path test_videos0_64_sp \
    --output_path test_videos0_splatting_64_sp
-
+   
 python npz_to_video.py --input_folder test_videos0_splatting_64_sp --output_folder test_videos0_splatting_64_sp_video
 
 python inpainting_inference_iter.py \
