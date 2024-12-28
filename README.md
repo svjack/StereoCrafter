@@ -157,6 +157,15 @@ output_video_path = "outputs/camel_splatting_results.mp4"  # 替换为输出视�
 fps = 30  # 替换为视频的帧率
 npz_to_video(npz_path, output_video_path, fps, key = "depth")
 ```
+
+camel_splatting_results_video_grid.mp4
+https://github.com/user-attachments/assets/160f2be6-a069-4abd-9c35-045c5565d17d
+
+camel_splatting_results.mp4
+https://github.com/user-attachments/assets/85a34c1e-b2f9-40e5-9cdd-ff844f1449b8
+
+
+
   
 - Step 2
 ```
@@ -166,6 +175,18 @@ python inpainting_inference.py \
     --input_video_path ./outputs/camel_splatting_results.mp4 \
     --save_dir ./outputs
 ```
+camel_inpainting_results_sbs.mp4
+
+https://github.com/user-attachments/assets/96a747f6-90a2-47b3-b91e-870efd000ddb
+
+camel_inpainting_results_anaglyph.mp4
+
+
+
+
+https://github.com/user-attachments/assets/f6a811a3-6c1d-4d73-85c8-85a77edc3136
+
+
 
 Script:
 
