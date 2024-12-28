@@ -15,7 +15,7 @@ from dependency.DepthCrafter.depthcrafter.utils import vis_sequence_depth, read_
 
 from Forward_Warp import forward_warp
 
-save_grid = False
+save_grid = True
 
 class DepthCrafterDemo:
     def __init__(
