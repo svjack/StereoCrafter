@@ -104,6 +104,68 @@ git clone https://huggingface.co/TencentARC/StereoCrafter
 
 
 ## 🔄 Inference
+- Step 0
+```bash
+python depth_splatting_inference_npz.py \
+   --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
+   --unet_path ./weights/DepthCrafter \
+   --input_video_path ./source_video/camel.mp4 \
+   --output_video_path ./outputs/camel_splatting_results.mp4
+```
+- Step 1
+```python
+import numpy as np
+from moviepy.editor import ImageSequenceClip
+
+def npz_to_video(npz_path, output_video_path, fps, key="video_grid"):
+    """
+    从 npz 文件中加载视频结构并保存为视频文件
+    :param npz_path: npz 文件路径
+    :param output_video_path: 输出视频文件路径
+    :param fps: 视频帧率
+    :param key: npz 文件中保存视频数据的键名
+    """
+    # 加载 npz 文件
+    data = np.load(npz_path)
+    video_grid = data[key]  # 假设视频结构保存在 'video_grid' 键中
+
+    # 将视频结构转换为 0-255 范围的图像序列
+    video_grid = (video_grid * 255).astype(np.uint8)
+    print("Original shape:", video_grid.shape)
+
+    # 检查是否为黑白视频（单通道）
+    if len(video_grid.shape) == 3:  # 形状为 (T, H, W)
+        # 将黑白视频转换为三通道
+        video_grid = np.stack([video_grid] * 3, axis=-1)  # 形状变为 (T, H, W, 3)
+        print("Converted shape:", video_grid.shape)
+
+    # 使用 moviepy 保存视频
+    clip = ImageSequenceClip(list(video_grid), fps=fps)
+    clip.write_videofile(output_video_path, codec="libx264", ffmpeg_params=["-crf", "16"])
+
+# 示例调用
+npz_path = "outputs/camel_splatting_results_video_grid.npz"  # 替换为你的 npz 文件路径
+output_video_path = "outputs/camel_splatting_results_video_grid.mp4"  # 替换为输出视频文件路径
+fps = 30  # 替换为视频的帧率
+npz_to_video(npz_path, output_video_path, fps)
+
+#### OR
+
+# 示例调用
+npz_path = "outputs/camel_splatting_results.npz"  # 替换为你的 npz 文件路径
+output_video_path = "outputs/camel_splatting_results.mp4"  # 替换为输出视频文件路径
+fps = 30  # 替换为视频的帧率
+npz_to_video(npz_path, output_video_path, fps, key = "depth")
+```
+  
+- Step 2
+```
+python inpainting_inference.py \
+    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
+    --unet_path ./weights/StereoCrafter \
+    --input_video_path ./outputs/camel_splatting_results.mp4 \
+    --save_dir ./outputs
+```
 
 Script:
 
