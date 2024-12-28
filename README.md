@@ -46,7 +46,14 @@ You can use Anaconda or Docker to build this basic environment.
 
 #### 2. Clone the repo
 ```bash
-git clone https://github.com/TencentARC/StereoCrafter
+sudo apt-get update && sudo apt-get install git-lfs ffmpeg cbm
+
+conda create -n stereoCrafter python=3.10
+conda activate stereoCrafter
+pip install ipykernel
+python -m ipykernel install --user --name stereoCrafter --display-name "stereoCrafter"
+
+git clone https://github.com/svjack/StereoCrafter
 cd StereoCrafter
 ```
 
