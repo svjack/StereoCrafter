@@ -12,3 +12,4 @@ av==12.3.0
 matplotlib==3.7.5
 mediapy==1.2.2
 pillow==9.0.0
+moviepy==1.0.3
