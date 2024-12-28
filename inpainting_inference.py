@@ -1,16 +1,16 @@
-import os
+import torch
+torch._C._cuda_init()
 
+import os
 import numpy as np
 from fire import Fire
 from decord import VideoReader, cpu
 
-import torch
+#import torch
 from torchvision.io import write_video
 
 from transformers import CLIPVisionModelWithProjection
-from diffusers import (
-    AutoencoderKLTemporalDecoder,
-)
+from diffusers import AutoencoderKLTemporalDecoder
 from diffusers import UNetSpatioTemporalConditionModel
 
 from pipelines.stereo_video_inpainting import StableVideoDiffusionInpaintingPipeline, tensor2vid
@@ -147,7 +147,7 @@ def main(
 
     unet = UNetSpatioTemporalConditionModel.from_pretrained(
         unet_path,
-        subfolder="unet_diffusers",
+        #subfolder="unet_diffusers",
         low_cpu_mem_usage=True,
         # variant="fp16",
         torch_dtype=torch.float16
@@ -157,6 +157,8 @@ def main(
     vae.requires_grad_(False)
     unet.requires_grad_(False)
 
+    print("before pipe :")
+
     pipeline = StableVideoDiffusionInpaintingPipeline.from_pretrained(
         pre_trained_path,
         image_encoder=image_encoder,
@@ -165,10 +167,10 @@ def main(
         torch_dtype=torch.float16,
     )
     pipeline = pipeline.to("cuda")
+    print("to cuda end.")
 
     os.makedirs(save_dir, exist_ok=True)
     video_name = input_video_path.split("/")[-1].replace(".mp4", "").replace("_splatting_results", "") + "_inpainting_results"
-
     video_reader = VideoReader(input_video_path, ctx=cpu(0))
     fps = video_reader.get_avg_fps()
     frame_indices = list(range(len(video_reader)))
