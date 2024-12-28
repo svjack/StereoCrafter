@@ -60,6 +60,7 @@ cd StereoCrafter
 #### 3. Install the requirements
 ```bash
 pip install -r requirements.txt
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
 
