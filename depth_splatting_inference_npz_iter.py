@@ -35,6 +35,8 @@ python inpainting_inference_iter.py \
     --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
     --unet_path ./weights/StereoCrafter \
     --input_video_path test_videos1_splatting_64_sp_video --output_video_path test_videos1_splatting_64_sp_video_3D
+
+python connect_video.py --input_folder test_videos1_splatting_64_sp_video_3D --output_folder test_videos1_splatting_64_sp_video_3D_connect
 '''
 
 import gc
