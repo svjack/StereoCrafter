@@ -1,5 +1,6 @@
 '''
 huggingface-cli download svjack/Genshin-Impact-Novel-Video Genshin-Impact-Cutness-video1.zip --repo-type dataset --local-dir .
+unzip Genshin-Impact-Novel-Video Genshin-Impact-Cutness-video1.zip
 
 ##### choose this
 python depth_splatting_inference_npz_iter.py \
@@ -18,6 +19,7 @@ python inpainting_inference_iter.py \
     --input_video_path test_videos0_splatting_64_video --output_video_path test_videos0_splatting_64_video_3D
 
 #####
+mkdir test_videos1 && cp "Genshin-Impact-Cutness-video1/[P057]璃月 群玉阁大战 哥哥.mp4" test_videos1
 
 python split_video.py --input_path test_videos1 --frames_per_segment 64 --output_path test_videos1_64_sp --skip_short_segments
 
