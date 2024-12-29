@@ -68,6 +68,7 @@ pip uninstall xformers
 pip install xformers
 pip install moviepy==1.0.3
 pip install pillow==9.0.0
+pip install pydub
 ```
 
 
