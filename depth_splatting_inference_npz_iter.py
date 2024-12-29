@@ -46,6 +46,20 @@ python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁�
 
 python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁大战 哥哥.mp4"  test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos1_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 
+python produce_hf_video_dataset.py --input_folder test_videos1_splatting_64_sp_video_3D \
+ --output_folder test_videos1_splatting_64_sp_video_3D_anaglyph_upload \
+  --group_by_type _anaglyph.mp4 \
+  --connected_video test_videos1_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python produce_hf_video_dataset.py --input_folder test_videos1_splatting_64_sp_video_3D \
+ --output_folder test_videos1_splatting_64_sp_video_3D_sbs_upload \
+  --group_by_type _sbs.mp4 \
+  --connected_video test_videos1_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
+huggingface-cli upload svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-Anaglyph-Video test_videos1_splatting_64_sp_video_3D_anaglyph_upload --repo-type dataset
+
+huggingface-cli upload svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-STS-Video test_videos1_splatting_64_sp_video_3D_sbs_upload --repo-type dataset
+
 #####
 
 huggingface-cli download svjack/Genshin-Impact-Novel-Video "原神角色EP.zip" --repo-type dataset --local-dir .
