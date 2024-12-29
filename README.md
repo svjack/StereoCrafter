@@ -21,6 +21,10 @@ Ying Shan
 <a href='https://huggingface.co/TencentARC/StereoCrafter'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-yellow'></a>
 </div>
 
+#### For view Anaglyph type 3D video, you can choose a 3D glass like this.
+
+![O1CN015HZWI31ut6SRAUiVT_!!3423816094-0-cib 220x220](https://github.com/user-attachments/assets/cf139934-4eda-425f-bad8-4321e42eb61d)
+
 #### Genshin-Impact-LiYue-QunYuGe-War Source Video 
 
 
