@@ -45,6 +45,39 @@ python connect_video.py --input_folder test_videos1_splatting_64_sp_video_3D --o
 python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁大战 哥哥.mp4"  test_videos1_splatting_64_sp_video_3D_connect/final_anaglyph.mp4  test_videos1_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
 
 python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁大战 哥哥.mp4"  test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos1_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
+#####
+
+huggingface-cli download svjack/Genshin-Impact-Novel-Video "原神角色EP.zip" --repo-type dataset --local-dir .
+unzip 原神角色EP.zip
+
+mkdir test_videos2 && cp "原神角色EP/《原神》EP - 如风如露之思.mp4" test_videos2
+
+python split_video.py --input_path test_videos2 --frames_per_segment 64 --output_path test_videos2_64_sp --skip_short_segments
+
+python depth_splatting_inference_npz_iter.py \
+   --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
+   --unet_path ./weights/DepthCrafter --process_length 64 \
+   --input_path test_videos2_64_sp \
+   --output_path test_videos2_splatting_64_sp
+
+python npz_to_video.py --input_folder test_videos2_splatting_64_sp --output_folder test_videos2_splatting_64_sp_video
+
+!pip install -r requirements.txt
+
+python inpainting_inference_iter.py \
+    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
+    --unet_path ./weights/StereoCrafter \
+    --input_video_path test_videos2_splatting_64_sp_video --output_video_path test_videos2_splatting_64_sp_video_3D
+
+python connect_video.py --input_folder test_videos2_splatting_64_sp_video_3D --output_folder test_videos2_splatting_64_sp_video_3D_connect
+
+#python spatial_split_video.py --input_video_path test_videos2_splatting_64_sp_video_3D_connect/final_sbs.mp4 --split_direction vertical
+
+python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风如露之思.mp4"  test_videos2_splatting_64_sp_video_3D_connect/final_anaglyph.mp4  test_videos2_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风如露之思.mp4"  test_videos2_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos2_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
 '''
 
 import gc
