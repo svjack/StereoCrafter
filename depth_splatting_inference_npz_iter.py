@@ -38,7 +38,11 @@ python inpainting_inference_iter.py \
 
 python connect_video.py --input_folder test_videos1_splatting_64_sp_video_3D --output_folder test_videos1_splatting_64_sp_video_3D_connect
 
-python spatial_split_video.py --input_video_path test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4 --split_direction vertical
+#python spatial_split_video.py --input_video_path test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4 --split_direction vertical
+
+python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁大战 哥哥.mp4"  test_videos1_splatting_64_sp_video_3D_connect/final_anaglyph.mp4  test_videos1_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python add_audio_with_speed_adjustment.py "test_videos1/[P057]璃月 群玉阁大战 哥哥.mp4"  test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos1_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 '''
 
 import gc
