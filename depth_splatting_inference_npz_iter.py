@@ -1,6 +1,6 @@
 '''
 huggingface-cli download svjack/Genshin-Impact-Novel-Video Genshin-Impact-Cutness-video1.zip --repo-type dataset --local-dir .
-unzip Genshin-Impact-Novel-Video Genshin-Impact-Cutness-video1.zip
+unzip Genshin-Impact-Cutness-video1.zip
 
 ##### choose this
 python depth_splatting_inference_npz_iter.py \
