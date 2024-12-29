@@ -92,6 +92,35 @@ python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风�
 
 python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风如露之思.mp4"  test_videos2_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos2_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 
+##### 【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4
+#####.\BBDown.exe https://www.bilibili.com/video/BV1py4y1t7u7
+
+mkdir test_videos3 && cp "【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4" test_videos3
+
+python split_video.py --input_path test_videos3 --frames_per_segment 64 --output_path test_videos3_64_sp --skip_short_segments
+
+python depth_splatting_inference_npz_iter.py \
+   --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1\
+   --unet_path ./weights/DepthCrafter --process_length 64 \
+   --input_path test_videos3_64_sp \
+   --output_path test_videos3_splatting_64_sp
+
+python npz_to_video.py --input_folder test_videos3_splatting_64_sp --output_folder test_videos3_splatting_64_sp_video
+
+!pip install -r requirements.txt
+
+python inpainting_inference_iter.py \
+    --pre_trained_path ./weights/stable-video-diffusion-img2vid-xt-1-1 \
+    --unet_path ./weights/StereoCrafter \
+    --input_video_path test_videos3_splatting_64_sp_video --output_video_path test_videos3_splatting_64_sp_video_3D
+
+python connect_video.py --input_folder test_videos3_splatting_64_sp_video_3D --output_folder test_videos3_splatting_64_sp_video_3D_connect
+
+python add_audio_with_speed_adjustment.py "【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4"  test_videos3_splatting_64_sp_video_3D_connect/final_anaglyph.mp4  test_videos3_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python add_audio_with_speed_adjustment.py "【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4"  test_videos3_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos3_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
+
 '''
 
 import gc
