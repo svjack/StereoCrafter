@@ -63,6 +63,7 @@ cd StereoCrafter
 #### 3. Install the requirements
 ```bash
 pip install -r requirements.txt
+pip uninstall torch torchvision
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 pip uninstall xformers
 pip install xformers
