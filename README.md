@@ -21,6 +21,30 @@ Ying Shan
 <a href='https://huggingface.co/TencentARC/StereoCrafter'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-yellow'></a>
 </div>
 
+#### Genshin-Impact-LiYue-QunYuGe-War Source Video 
+
+
+
+https://github.com/user-attachments/assets/0321aa6e-20b3-4e4c-b789-ae5abc3bbdb7
+
+
+#### svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-Anaglyph-Video Output
+https://huggingface.co/datasets/svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-Anaglyph-Video
+
+
+
+https://github.com/user-attachments/assets/39cf043d-a2d5-42bb-ad5f-373ec58df88c
+
+
+#### svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-STS-Video Output
+https://huggingface.co/datasets/svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-STS-Video
+
+
+
+https://github.com/user-attachments/assets/74357f8d-8551-4760-bdf8-f31d8caf1338
+
+
+
 ## 💡 Abstract
 
 We propose a novel framework to convert any 2D videos to immersive stereoscopic 3D ones that can be viewed on different display devices, like 3D Glasses, Apple Vision Pro and 3D Display. It can be applied to various video sources, such as movies, vlogs, 3D cartoons, and AIGC videos.
