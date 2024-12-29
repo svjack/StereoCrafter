@@ -37,6 +37,8 @@ python inpainting_inference_iter.py \
     --input_video_path test_videos1_splatting_64_sp_video --output_video_path test_videos1_splatting_64_sp_video_3D
 
 python connect_video.py --input_folder test_videos1_splatting_64_sp_video_3D --output_folder test_videos1_splatting_64_sp_video_3D_connect
+
+python spatial_split_video.py --input_video_path test_videos1_splatting_64_sp_video_3D_connect/final_sbs.mp4 --split_direction vertical
 '''
 
 import gc
