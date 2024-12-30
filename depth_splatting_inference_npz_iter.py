@@ -145,9 +145,9 @@ python produce_hf_video_dataset.py --input_folder test_videos3_splatting_64_sp_v
   --group_by_type _sbs.mp4 \
   --connected_video test_videos3_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 
-huggingface-cli upload svjack/Genshin-RealWorld-Teyvat-Reality-3D-Anaglyph-Video test_videos3_splatting_64_sp_video_3D_anaglyph_upload --repo-type dataset
+huggingface-cli upload svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-Anaglyph-Video test_videos3_splatting_64_sp_video_3D_anaglyph_upload --repo-type dataset
 
-huggingface-cli upload svjack/Genshin-RealWorld-Teyvat-Reality-3D-STS-Video test_videos3_splatting_64_sp_video_3D_sbs_upload --repo-type dataset
+huggingface-cli upload svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-STS-Video test_videos3_splatting_64_sp_video_3D_sbs_upload --repo-type dataset
 
 '''
 
