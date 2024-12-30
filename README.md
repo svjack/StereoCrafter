@@ -25,6 +25,12 @@ Ying Shan
 
 ![O1CN015HZWI31ut6SRAUiVT_!!3423816094-0-cib 220x220](https://github.com/user-attachments/assets/cf139934-4eda-425f-bad8-4321e42eb61d)
 
+#### Below are my devices i used to view two type of 3D video
+
+![IMG_8003](https://github.com/user-attachments/assets/e026a0f8-15b4-43f8-9eb7-2809802e809f)
+
+- The red-blue 3D glasses I purchased above are used to watch Anaglyph type 3D videos, while the 3D phone holder I bought below, when paired with a 3D video player on a smartphone, is used to view Side-by-Side (SBS) 3D videos. Based on the three results below。
+- this project is suitable for generating 3D videos of real-world scenes or 3D videos where the foreground characters are not restricted to specific scenarios (this depends on the quality of the depth estimation model and the scene materials, and additional preprocessing is required for videos containing text)."
 
 #### Genshin-Impact-RealWorld-Teyvat-Reality Source Video
 
