@@ -92,6 +92,21 @@ python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风�
 
 python add_audio_with_speed_adjustment.py "test_videos2/《原神》EP - 如风如露之思.mp4"  test_videos2_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos2_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 
+python produce_hf_video_dataset.py --input_folder test_videos2_splatting_64_sp_video_3D \
+ --output_folder test_videos2_splatting_64_sp_video_3D_anaglyph_upload \
+  --group_by_type _anaglyph.mp4 \
+  --connected_video test_videos2_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python produce_hf_video_dataset.py --input_folder test_videos2_splatting_64_sp_video_3D \
+ --output_folder test_videos2_splatting_64_sp_video_3D_sbs_upload \
+  --group_by_type _sbs.mp4 \
+  --connected_video test_videos2_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
+huggingface-cli upload svjack/Genshin-Impact-Nahida-EP-3D-Anaglyph-Video test_videos2_splatting_64_sp_video_3D_anaglyph_upload --repo-type dataset
+
+huggingface-cli upload svjack/Genshin-Impact-Nahida-EP-3D-STS-Video test_videos2_splatting_64_sp_video_3D_sbs_upload --repo-type dataset
+
+
 ##### 【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4
 #####.\BBDown.exe https://www.bilibili.com/video/BV1py4y1t7u7
 
@@ -120,6 +135,19 @@ python add_audio_with_speed_adjustment.py "【原神真人版】如果现实世�
 
 python add_audio_with_speed_adjustment.py "【原神真人版】如果现实世界与提瓦特接轨..._fix.mp4"  test_videos3_splatting_64_sp_video_3D_connect/final_sbs.mp4  test_videos3_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
 
+python produce_hf_video_dataset.py --input_folder test_videos3_splatting_64_sp_video_3D \
+ --output_folder test_videos3_splatting_64_sp_video_3D_anaglyph_upload \
+  --group_by_type _anaglyph.mp4 \
+  --connected_video test_videos3_splatting_64_sp_video_3D_connect/final_anaglyph_audio.mp4
+
+python produce_hf_video_dataset.py --input_folder test_videos3_splatting_64_sp_video_3D \
+ --output_folder test_videos3_splatting_64_sp_video_3D_sbs_upload \
+  --group_by_type _sbs.mp4 \
+  --connected_video test_videos3_splatting_64_sp_video_3D_connect/final_sbs_audio.mp4
+
+huggingface-cli upload svjack/Genshin-RealWorld-Teyvat-Reality-3D-Anaglyph-Video test_videos3_splatting_64_sp_video_3D_anaglyph_upload --repo-type dataset
+
+huggingface-cli upload svjack/Genshin-RealWorld-Teyvat-Reality-3D-STS-Video test_videos3_splatting_64_sp_video_3D_sbs_upload --repo-type dataset
 
 '''
 
