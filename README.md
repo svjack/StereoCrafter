@@ -25,6 +25,43 @@ Ying Shan
 
 ![O1CN015HZWI31ut6SRAUiVT_!!3423816094-0-cib 220x220](https://github.com/user-attachments/assets/cf139934-4eda-425f-bad8-4321e42eb61d)
 
+
+#### Genshin-Impact-RealWorld-Teyvat-Reality Source Video
+
+
+
+
+
+
+https://github.com/user-attachments/assets/8f27d971-45cb-48be-8fa3-d6e9e26e6327
+
+
+
+#### svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-Anaglyph-Video Output
+https://huggingface.co/datasets/svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-Anaglyph-Video
+
+
+
+
+
+https://github.com/user-attachments/assets/7f7977ab-eaa7-4c12-a0b5-b0dda037922a
+
+
+
+
+#### svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-STS-Video Output
+https://huggingface.co/datasets/svjack/Genshin-Impact-RealWorld-Teyvat-Reality-3D-STS-Video
+
+
+
+
+
+https://github.com/user-attachments/assets/5c21d258-5cf6-4d19-88f8-afaf2616da3e
+
+
+<br/>
+
+
 #### Genshin-Impact-LiYue-QunYuGe-War Source Video 
 
 
@@ -46,6 +83,48 @@ https://huggingface.co/datasets/svjack/Genshin-Impact-LiYue-QunYuGe-War-3D-STS-V
 
 
 https://github.com/user-attachments/assets/74357f8d-8551-4760-bdf8-f31d8caf1338
+
+
+<br/>
+
+
+#### Genshin-Impact-Nahida-EP Source Video
+
+
+
+
+https://github.com/user-attachments/assets/e0eaa1ea-49fb-4640-b1e1-7250f23e453c
+
+
+
+
+#### svjack/Genshin-Impact-Nahida-EP-3D-Anaglyph-Video Output
+https://huggingface.co/datasets/svjack/Genshin-Impact-Nahida-EP-3D-Anaglyph-Video
+
+
+
+
+
+
+
+https://github.com/user-attachments/assets/07604db7-18e2-4c10-b815-0960310c7166
+
+
+
+
+
+
+#### svjack/Genshin-Impact-Nahida-EP-3D-STS-Video Output
+https://huggingface.co/datasets/Genshin-Impact-Nahida-EP-3D-STS-Video
+
+
+
+
+
+https://github.com/user-attachments/assets/73853bb4-a3a4-4137-8d1e-9e62d350f93c
+
+
+
 
 
 
