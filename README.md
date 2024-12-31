@@ -121,7 +121,7 @@ https://github.com/user-attachments/assets/07604db7-18e2-4c10-b815-0960310c7166
 
 
 #### svjack/Genshin-Impact-Nahida-EP-3D-STS-Video Output
-https://huggingface.co/datasets/Genshin-Impact-Nahida-EP-3D-STS-Video
+https://huggingface.co/datasets/svjack/Genshin-Impact-Nahida-EP-3D-STS-Video
 
 
 
